@@ -5,12 +5,14 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@types/recharts": "^1.8.5",
     "bootstrap": "^4.4.1",
     "moment": "^2.24.0",
     "react": "16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "16.12.0",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "recharts": "^2.0.0-beta.1"
   },
   "devDependencies": {
     "typescript": "3.3.3"
