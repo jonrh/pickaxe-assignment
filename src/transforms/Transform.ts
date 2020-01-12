@@ -1,7 +1,7 @@
 import moment from "moment";
 
-import { data } from "./data";
-import { DataPoint, DataPoints } from "./index";
+import { data } from "../data";
+import { DataPoint, DataPoints } from "../index";
 
 // Ran into issues importing JSON into TypeScript, was of type Module but not Array as I would
 // have expected. Going to leave this for may to later and get on with the transformations.
@@ -27,6 +27,10 @@ export function testOutput() {
  * Note: currently it assumes the exact structure of the provided JSON. That is, we fetch the first
  * [0] element in the metrics and dimensions arrays. In practice we may not be guaranteed that
  * those arrays only contain one element.
+ *
+ * Note: this function assumes there exist values for everything. It would be nice to safely get
+ * the values and provide default values if none exist. That is, make this data transformation
+ * function more robust to edge cases.
  */
 export function tableTransform(data: DataPoints) {
   return data.map((entry: DataPoint) => {
@@ -37,5 +41,17 @@ export function tableTransform(data: DataPoints) {
       value: entry.metrics[0].value,
     }
   });
+}
+
+export function chartTransform(data: DataPoints) {
+  return 1;
+}
+
+/** Returns a list of unique regions from the provided dataset */
+export function getUniqueRegions(data: DataPoints): string[] {
+  const allRegions = data.map((entry) => entry.dimensions[0].value);
+  const uniqueRegions = new Set(allRegions);
+
+  return Array.from(uniqueRegions); //
 }
 
