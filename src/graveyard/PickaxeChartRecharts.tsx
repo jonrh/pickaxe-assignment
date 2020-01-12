@@ -44,8 +44,8 @@ const data = [
 ];
 
 // With Recharts. Abandoned using Recharts because I couldn't find an easy read-made solution
-// to having the X axis be an automatic time scale.
-const PickaxeChartOld: FunctionComponent<Props> = (props: Props) => {
+// to having the X axis be an automatic time scale. Switched to Highcharts instead.
+const PickaxeChartRecharts: FunctionComponent<Props> = (props: Props) => {
   return (
     <ResponsiveContainer width="100%" height={500}>
       <LineChart data={data}>
