@@ -18,11 +18,11 @@ interface Metric {
  */
 interface DataPoint {
   timestamp: string, // ISO 8601 date time string, "2020-01-02T00:00:00.000Z"
-  dimensions: [Dimension],
-  metrics: [Metric],
+  dimensions: Dimension[],
+  metrics: Metric[],
 }
 
-export type DataPoints = [DataPoint];
+export type DataPoints = DataPoint[];
 
 /**
  * One line in the table we display below the graph.
