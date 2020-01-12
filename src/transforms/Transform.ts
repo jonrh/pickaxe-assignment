@@ -45,7 +45,7 @@ export function chartTransform(data: DataPoints) {
 
   // For each data point in the JSON
   data.forEach((entry: DataPoint) => {
-    const timestamp = entry.timestamp;
+    const timestamp = moment(entry.timestamp).valueOf(); // Unix time stamp in ms
     const region = entry.dimensions[0].value;
     const value = entry.metrics[0].value;
 

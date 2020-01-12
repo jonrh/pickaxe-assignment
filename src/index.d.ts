@@ -40,12 +40,12 @@ export interface TableLine {
   value: number,
 }
 
+type ChartSerieDataPoint = [string, number];
+
 // WIP type for the data that will be fed into a Highcharts chart
 export interface ChartSerie {
   name: string, // "us", "ca", "unknown"
-  data: [
-    //[timestamp, value]
-  ]
+  data: ChartSerieDataPoint[]
 }
 
 export type ChartSeries = ChartSerie[];
