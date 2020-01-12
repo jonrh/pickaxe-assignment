@@ -1,13 +1,30 @@
 import React from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+import { data } from "./data";
+import { tableTransform } from "./dataTransform";
+import PickaxeTable from "./components/PickaxeTable";
 
 export default function App() {
-  return (
-    <>
-    <h2>Line Chart</h2>
-  <hr />
+  const tableData = tableTransform(data);
 
-  <h2>Table</h2>
-  <hr />
-  </>
-);
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <h2>Line Chart</h2>
+          <hr />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <h2>Table</h2>
+          <PickaxeTable data={tableData} />
+        </Col>
+      </Row>
+    </Container>
+  );
 }
