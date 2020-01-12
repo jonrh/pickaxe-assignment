@@ -3,3 +3,6 @@
 
 # macOS Finder settings files
 .DS_Store
+
+# JavaScript third party modules downloaded from npm or Yarn
+node_modules/
