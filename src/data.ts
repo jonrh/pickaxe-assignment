@@ -1,4 +1,6 @@
-export const data = [
+import {DataPoints} from "./index";
+
+export const data: DataPoints = [
   {
     "timestamp": "2020-01-02T00:00:00.000Z",
     "dimensions": [

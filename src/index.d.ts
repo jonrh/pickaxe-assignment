@@ -3,7 +3,7 @@ interface Dimension {
   name: string,
   friendlyName: string,
   // Note: in given dataset it's string but generally could be something else
-  value: "us" | "ca" | "unknown" | string
+  value: string, // "us", "ca", "unknown", etc
 }
 
 interface Metric {
@@ -39,3 +39,13 @@ export interface TableLine {
   region: string, // "us", "ca", "unknown", etc
   value: number,
 }
+
+// WIP type for the data that will be fed into a Highcharts chart
+export interface ChartSerie {
+  name: string, // "us", "ca", "unknown"
+  data: [
+    //[timestamp, value]
+  ]
+}
+
+export type ChartSeries = ChartSerie[];
