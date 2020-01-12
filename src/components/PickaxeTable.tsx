@@ -29,9 +29,9 @@ const PickaxeTable: FunctionComponent<Props> = (props: Props) => {
       <tbody>
       {
         // For every line in the table
-        props.data.map((line: any) => {
+        props.data.map((line, index) => {
           return (
-            <tr>
+            <tr key={index}>
               <td>{line.timestamp}</td>
               <td>{line.metric}</td>
               <td>{line.region}</td>
