@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import { data } from "./data";
-import { tableTransform } from "./dataTransform";
+import { tableTransform } from "./transforms/Transform";
 import PickaxeTable from "./components/PickaxeTable";
 import PickaxeChart from "./components/PickaxeChart";
 
