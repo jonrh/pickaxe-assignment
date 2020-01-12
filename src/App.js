@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import { data } from "./data";
 import { tableTransform } from "./dataTransform";
 import PickaxeTable from "./components/PickaxeTable";
+import PickaxeChart from "./components/PickaxeChart";
 
 export default function App() {
   const tableData = tableTransform(data);
@@ -15,7 +16,7 @@ export default function App() {
       <Row>
         <Col>
           <h2>Line Chart</h2>
-          <hr />
+          <PickaxeChart data={tableData} />
         </Col>
       </Row>
 
