@@ -12,7 +12,7 @@ test("chartTransform returns the expected output", () => {
   const actual = chartTransform(data);
   const expected = [
     {
-      name: "unknown Views",
+      name: "unknown",
       data: [
         ["2020-01-02T00:00:00.000Z", 3743],
         ["2020-01-03T00:00:00.000Z", 3361],
@@ -25,7 +25,7 @@ test("chartTransform returns the expected output", () => {
       ]
     },
     {
-      name: "us Views",
+      name: "us",
       data: [
         ["2020-01-02T00:00:00.000Z", 326484],
         ["2020-01-03T00:00:00.000Z", 312514],
@@ -38,7 +38,7 @@ test("chartTransform returns the expected output", () => {
       ]
     },
     {
-      name: "ca Views",
+      name: "ca",
       data: [
         ["2020-01-02T00:00:00.000Z", 43281],
         ["2020-01-03T00:00:00.000Z", 41245],
@@ -52,5 +52,5 @@ test("chartTransform returns the expected output", () => {
     },
   ];
 
-  expect(actual).toBe(expected);
+  expect(actual).toEqual(expected);
 });

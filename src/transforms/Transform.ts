@@ -3,10 +3,6 @@ import moment from "moment";
 import { data } from "../data";
 import { DataPoint, DataPoints } from "../index";
 
-// Ran into issues importing JSON into TypeScript, was of type Module but not Array as I would
-// have expected. Going to leave this for may to later and get on with the transformations.
-// import * as data from "./data.json";
-
 export function testOutput() {
   console.log(data);
 
@@ -44,7 +40,29 @@ export function tableTransform(data: DataPoints) {
 }
 
 export function chartTransform(data: DataPoints) {
-  return 1;
+  // Todo add type
+  let regions: any = {};
+
+  // For each data point in the JSON
+  data.forEach((entry: DataPoint) => {
+    const timestamp = entry.timestamp;
+    const region = entry.dimensions[0].value;
+    const value = entry.metrics[0].value;
+
+    // Add the metric value (number of views) to the region it belongs to
+    if (region in regions) {
+      regions[region].push([timestamp, value])
+    } else {
+      regions[region] = [[timestamp, value]];
+    }
+  });
+
+  return Object.entries(regions).map(([region, dataPoints]) => {
+    return {
+      name: region,
+      data: dataPoints
+    };
+  });
 }
 
 /** Returns a list of unique regions from the provided dataset */

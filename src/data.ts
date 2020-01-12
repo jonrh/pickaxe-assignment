@@ -1,5 +1,11 @@
 import {DataPoints} from "./index";
 
+// Ran into issues importing JSON into TypeScript, was of type Module but not Array as I would
+// have expected. I have run into this before but forgot how to figure it out. To save time I am
+// cheating a bit by defining the data here in this TypeScript file. The added benefit is it has
+// types.
+
+// The data as provided by the assignment.
 export const data: DataPoints = [
   {
     "timestamp": "2020-01-02T00:00:00.000Z",
