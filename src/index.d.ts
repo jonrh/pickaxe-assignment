@@ -13,15 +13,14 @@ interface Metric {
   value: number // Note: in given dataset it's integers but generally could be something else
 }
 
-/**
- *
- */
+/** One data point in the provided JSON */
 interface DataPoint {
   timestamp: string, // ISO 8601 date time string, "2020-01-02T00:00:00.000Z"
   dimensions: Dimension[],
   metrics: Metric[],
 }
 
+/** The type of the provided JSON document */
 export type DataPoints = DataPoint[];
 
 /**
@@ -40,9 +39,11 @@ export interface TableLine {
   value: number,
 }
 
+// Types that were meant to be used to feed into a Highcharts series object. However I ran into
+// type compatibility issues which I wasn't able to solve due to time constraints. Looking at the
+// Highcharts documentation this should be compatible but I may be doing a silly mistake somewhere.
 type ChartSerieDataPoint = [string, number];
 
-// WIP type for the data that will be fed into a Highcharts chart
 export interface ChartSerie {
   name: string, // "us", "ca", "unknown"
   data: ChartSerieDataPoint[]

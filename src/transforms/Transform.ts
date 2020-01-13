@@ -1,8 +1,9 @@
 import moment from "moment";
 
 import { data } from "../data";
-import { DataPoint, DataPoints } from "../index";
+import {DataPoint, DataPoints} from "../index";
 
+/** A function I used when starting out, just to get some data flowing */
 export function testOutput() {
   console.log(data);
 
@@ -39,8 +40,11 @@ export function tableTransform(data: DataPoints) {
   });
 }
 
+/**
+ * Transforms the provided JSON data into a data structure that is suitable to be consumed by a
+ * Highcharts line chart.
+ */
 export function chartTransform(data: DataPoints) {
-  // Todo add type
   let regions: any = {};
 
   // For each data point in the JSON

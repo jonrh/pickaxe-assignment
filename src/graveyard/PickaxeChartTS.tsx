@@ -29,7 +29,13 @@ function getHighChartsOptions(data: ChartSeries): Highcharts.Options {
   }
 }
 
-// With Highcharts
+// With Highcharts using TypeScript. Abandoned because I ran into
+
+/**
+ * An attempt to use Highcharts with TypeScript. Abandoned as I ran into type compatibility issues
+ * with the series object. Due to time constraints I just used JavaScript instead, see the file
+ * src/components/PickaxeChart.jsx for the implementation that was ultimately used.
+ */
 const PickaxeChartTS: FunctionComponent<Props> = (props: Props) => {
   const options = getHighChartsOptions(props.data);
 

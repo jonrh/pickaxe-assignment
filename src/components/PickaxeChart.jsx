@@ -23,7 +23,7 @@ function getHighChartsOptions(data) {
     },
 
     tooltip: {
-      pointFormat: '<span style=\"color:{point.color}\">●</span> {series.name} Views: <b>{point.y}</b><br/>'
+      pointFormat: '<span style="color:{point.color}">●</span> {series.name} Views: <b>{point.y}</b><br/>'
     },
 
     colors: ["#2ac8dd", "#fa6e58", "#fbd14a"],
@@ -32,7 +32,7 @@ function getHighChartsOptions(data) {
   }
 }
 
-// With Highcharts
+/** Displays a Highcharts smooth line chart for number of views in a given region over time. */
 const PickaxeChart = (props) => {
   const options = getHighChartsOptions(props.data);
 
