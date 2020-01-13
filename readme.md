@@ -1,11 +1,11 @@
 # Pickaxe Foundry Take Home Assignment
 
-This is a take home assignment for the role of web developer / front end engineer at [Pickaxe Foundry](https://pickaxe.ai). The source is tracked in the private GitHub repository [jonrh/pickaxe-assignment](https://github.com/jonrh/pickaxe-assignment). Please get in touch at [hi@jonrh.is]() if you would like access to see the git commit history.
+This is a take home assignment for the role of web developer / front end engineer at [Pickaxe Foundry](https://pickaxe.ai). The source is tracked in the GitHub repository [jonrh/pickaxe-assignment](https://github.com/jonrh/pickaxe-assignment).
 
 **Author**: Jón Rúnar Helgason  
 **Date**: 12. Jan 2020  
 
-The assignment took me about 7 hours excluding breaks. The first 2 hours were spent on getting set up and implementing the table. Next I decided to try out the charting library [recharts](http://recharts.org/). It is one of the charting solution used by Pickaxe. I had never used it before so wanted to give it a go and learn something new. After additonal 2 hours I started running into issues with *recharts* (see notes below) and decided to go instead for Highcharts, something I was more familiar with. It then took me about additional 3 hours to implement unit tests, data transformations and the line chart.
+The assignment took me about 7 hours excluding breaks. The first 2 hours were spent on getting set up and implementing the table. Next I decided to try out the charting library [recharts](http://recharts.org/). It is one of the charting solution used by Pickaxe. I had never used it before so wanted to give it a go and learn something new. After additonal 2 hours I started running into issues with *recharts* (see notes below) and decided to go instead for [Highcharts](https://www.highcharts.com/), something I was more familiar with. It then took me about additional 3 hours to implement unit tests, data transformations and the line chart.
 
 It was a fun assignment which I enjoyed. Plenty of stuff was learned and re-learned. In retrospect going for TypeScript might have been too much for a time limited assignment like this. It would have made more sense had I already been familiar with the types used by React and Highcharts.
 
@@ -18,14 +18,14 @@ Below is a screenshot:
 
 ## How to run
 ### In browser at Codesandbox.io
-The latest state of this repository is available at [https://codesandbox.io/s/chart-table-55bue]()
+The latest state of this repository is available at [https://codesandbox.io/s/github/jonrh/pickaxe-assignment]()
 
 ### Locally
 This is a [Create React App](https://create-react-app.dev/) project. Assuming [Node](https://nodejs.org/) & [yarn](https://yarnpkg.com/) (or [npm](https://www.npmjs.com/)) is installed, run the following in the project directory on the command line:
 
 ```
 yarn install
-yarn run
+yarn start
 ```
 
 Open a browser at the URL [http://localhost:3000/](http://localhost:3000/)
@@ -41,6 +41,8 @@ Open a browser at the URL [http://localhost:3000/](http://localhost:3000/)
 + Originally I attempted to use *recharts* for the graph. It was the first time I had used it. It looked pretty nice and seemed pretty powerful once you get into the groove of it. The problem I ran into was I couldn't find a built-in way to do a datetime X-axis. Reading the documentation it is supposed to be possible but I couldn't get it to work. I knew Pickaxe was using *recharts* so I looked into the source maps of dashboard.pickaxe.ai and saw some custom utilities that implemented it. After seeing that I abandoned ship and went for Highcharts instead as I knew this was automatically handled which was very beneficial given the time constraints.
 
 + I originally wrote the `PickaxeChart` component in TypeScript. However I changed over to JavaScript because I ran into an type mismatch of the series data object with Highcharts. I love TypeScript types but didn't really have the time to wrestle the types.
+
++ Before starting the project I deliberated trying out [data-forge-ts](https://github.com/data-forge/data-forge-ts) to transform the data. It looked like a promising candidate but since the assignment was time constrained I didn't want to risk a getting stuck.
 
 ## Development notes
 
