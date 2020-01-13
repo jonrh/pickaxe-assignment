@@ -1,6 +1,6 @@
 import moment from "moment";
 
-import { data } from "../data";
+import {data} from "../data";
 import {DataPoint, DataPoints} from "../index";
 
 /** A function I used when starting out, just to get some data flowing */
@@ -69,7 +69,11 @@ export function chartTransform(data: DataPoints) {
   });
 }
 
-/** Returns a list of unique regions from the provided dataset */
+/**
+ * Returns a list of unique regions from the provided dataset. In the end I didn't end up using
+ * this function. I planned to use it in chartTransform() but decided to use a different way with
+ * objects (the regions object).
+ */
 export function getUniqueRegions(data: DataPoints): string[] {
   const allRegions = data.map((entry) => entry.dimensions[0].value);
   const uniqueRegions = new Set(allRegions);

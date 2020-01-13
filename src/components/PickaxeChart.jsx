@@ -2,6 +2,10 @@ import React from "react";
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
+/**
+ * Returns a Highcharts configuration object that specifies how the chart should look and feel. It
+ * receives a data object which is a Highchart compatible series object.
+ */
 function getHighChartsOptions(data) {
   return {
     chart: {

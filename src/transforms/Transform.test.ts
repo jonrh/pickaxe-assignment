@@ -1,6 +1,6 @@
 import moment from "moment";
 
-import { data } from "../data";
+import {data} from "../data";
 import {chartTransform, getUniqueRegions} from "./Transform";
 
 test("unique regions should be us, ca, unknown", () => {
@@ -9,7 +9,6 @@ test("unique regions should be us, ca, unknown", () => {
   expect(getUniqueRegions(data).sort()).toEqual(["ca", "us", "unknown"].sort());
   expect(getUniqueRegions(data).sort()).toEqual(["ca", "unknown", "us"].sort());
 });
-
 
 test("chartTransform returns the expected output", () => {
   const unixTime = (dateTime: string) => moment(dateTime).valueOf(); // In milli seconds

@@ -1,14 +1,14 @@
 import React, {FunctionComponent} from "react";
 import Table from "react-bootstrap/Table";
 
-import { TableLine } from "../index";
+import {TableLine} from "../index";
 
 interface Props {
   data: [TableLine]
 }
 
 /**
- * A responsive Bootstrap table that displays a table like this:
+ * A responsive Bootstrap table that displays something like this:
  *
  *    Date | Metric | Region | Value
  *    Jan1   Views    ca       123
