@@ -1,6 +1,6 @@
 # Pickaxe Foundry Take Home Assignment
 
-This is a take home assignment for the role of web developer / front end engineer at [Pickaxe Foundry](https://pickaxe.ai).
+This is a take home assignment for the role of web developer / front end engineer at [Pickaxe Foundry](https://pickaxe.ai). The source is tracked in the private GitHub repository [jonrh/pickaxe-assignment](https://github.com/jonrh/pickaxe-assignment). Please get in touch at [hi@jonrh.is]() if you would like access to see the git commit history.
 
 **Author**: Jón Rúnar Helgason  
 **Date**: 12. Jan 2020  
@@ -17,6 +17,10 @@ Below is a screenshot:
 
 
 ## How to run
+### In browser at Codesandbox.io
+The latest state of this repository is available at [https://codesandbox.io/s/chart-table-55bue]()
+
+### Locally
 This is a [Create React App](https://create-react-app.dev/) project. Assuming [Node](https://nodejs.org/) & [yarn](https://yarnpkg.com/) (or [npm](https://www.npmjs.com/)) is installed, run the following in the project directory on the command line:
 
 ```
@@ -27,6 +31,8 @@ yarn run
 Open a browser at the URL [http://localhost:3000/](http://localhost:3000/)
 
 ## Notes
+
++ I cheated and didn't use codesandbox.io to develop. Instead I created a Git repository and developed locally with my preffered IDE, [WebStorm](https://www.jetbrains.com/webstorm/).
 
 + The line chart is implemented in [Highcharts](https://www.highcharts.com/). [react-bootstrap](https://react-bootstrap.github.io/) is used to handle responsiveness and the look and feel of the table.
 
